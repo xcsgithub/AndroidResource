@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/property"
+        icon="@drawable/my_tab_property"
+        title="资产"
+        barColorWhenSelected="#fbe201"
+        />
+    <tab
+        id="@+id/statement"
+        icon="@drawable/my_tab_statement"
+        title="报表"
+        />
+    <tab
+        id="@+id/account"
+        icon="@drawable/my_tab_account"
+        title="资产"
+        />
+    <tab
+        id="@+id/manage_money"
+        icon="@drawable/my_tab_manage"
+        title="理财"
+        />
+    <tab
+        id="@+id/more"
+        icon="@drawable/my_tab_more"
+        title="更多"
+        />
+</tabs>
