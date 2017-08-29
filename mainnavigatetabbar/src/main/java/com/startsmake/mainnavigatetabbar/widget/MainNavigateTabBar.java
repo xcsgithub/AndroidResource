@@ -34,6 +34,7 @@ public class MainNavigateTabBar extends LinearLayout implements View.OnClickList
 
     private List<ViewHolder> mViewHolderList;
     private OnTabSelectedListener mTabSelectListener;
+    private OnClickSelectedTabListener mClickSelectedTagListener;
     private FragmentActivity mFragmentActivity;
     private String mCurrentTag;
     private Fragment mCurrentFragment;
@@ -195,6 +196,11 @@ public class MainNavigateTabBar extends LinearLayout implements View.OnClickList
     private void showFragment(ViewHolder holder) {
         FragmentTransaction transaction = mFragmentActivity.getSupportFragmentManager().beginTransaction();
         if (isFragmentShown(transaction, holder.tag)) {
+            if (holder.clickOnSelected){
+                if (mClickSelectedTagListener != null){
+                    mClickSelectedTagListener.onClickSelectedTab(holder);
+                }
+            }
             return;
         }
         setCurrSelectedTabByTag(holder.tag);
@@ -317,6 +323,7 @@ public class MainNavigateTabBar extends LinearLayout implements View.OnClickList
         public TextView tabTitle;
         public Class fragmentClass;
         public int tabIndex;
+        public boolean clickOnSelected;
     }
 
 
@@ -327,17 +334,20 @@ public class MainNavigateTabBar extends LinearLayout implements View.OnClickList
         public int titleStringRes;
         //        public int tabViewResId;
         public String title;
+        public boolean clickOnSeleted;
 
-        public TabParam(int iconResId, int iconSelectedResId, String title) {
+        public TabParam(int iconResId, int iconSelectedResId, String title, boolean clickOnSeleted) {
             this.iconResId = iconResId;
             this.iconSelectedResId = iconSelectedResId;
             this.title = title;
+            this.clickOnSeleted = clickOnSeleted;
         }
 
-        public TabParam(int iconResId, int iconSelectedResId, int titleStringRes) {
+        public TabParam(int iconResId, int iconSelectedResId, int titleStringRes,boolean clickOnSeleted) {
             this.iconResId = iconResId;
             this.iconSelectedResId = iconSelectedResId;
             this.titleStringRes = titleStringRes;
+            this.clickOnSeleted = clickOnSeleted;
         }
 
         public TabParam(int backgroundColor, int iconResId, int iconSelectedResId, int titleStringRes) {
@@ -355,9 +365,16 @@ public class MainNavigateTabBar extends LinearLayout implements View.OnClickList
         }
     }
 
+    public interface OnClickSelectedTabListener{
+        void onClickSelectedTab(ViewHolder holder);
+    }
 
     public interface OnTabSelectedListener {
         void onTabSelected(ViewHolder holder);
+    }
+
+    public void setOnClickSelectedTagListener(OnClickSelectedTabListener onClickSelectedTagListener){
+        mClickSelectedTagListener = onClickSelectedTagListener;
     }
 
     public void setTabSelectListener(OnTabSelectedListener tabSelectListener) {

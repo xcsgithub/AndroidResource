@@ -10,12 +10,17 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG_PAGE_HOME = "资产";
+    private static final String TAG_PAGE_CITY = "报表";
+    private static final String TAG_PAGE_PUBLISH = "";
+    private static final String TAG_PAGE_MESSAGE = "理财";
+    private static final String TAG_PAGE_PERSON = "更多";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-
     }
 
 }
