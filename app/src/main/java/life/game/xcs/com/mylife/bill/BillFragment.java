@@ -5,4 +5,5 @@ package life.game.xcs.com.mylife.bill;
  */
 
 public class BillFragment extends android.support.v4.app.Fragment {
+
 }

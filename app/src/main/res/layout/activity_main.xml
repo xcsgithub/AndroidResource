@@ -9,13 +9,13 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></FrameLayout>
-    <com.startsmake.mainnavigatetabbar.widget.MainNavigateTabBar
-        android:id="@+id/mainTabBar"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        android:background="@color/white"
-        app:containerId="main_container"
-        app:navigateSelectedTextColor="@color/base_text_blue"
-        app:navigateTextColor="@color/comui_tab_text_color"/>
+    <!--<com.startsmake.mainnavigatetabbar.widget.MainNavigateTabBar-->
+        <!--android:id="@+id/mainTabBar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="60dp"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:background="@color/white"-->
+        <!--app:containerId="main_container"-->
+        <!--app:navigateSelectedTextColor="@color/base_text_blue"-->
+        <!--app:navigateTextColor="@color/comui_tab_text_color"/>-->
 </RelativeLayout>
